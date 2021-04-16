@@ -6,7 +6,7 @@ let commitName = stdout
   .split('--')
   .map((x) => x.trim());
 
-Fs.unlinkSync(`./semver.js`);
+fs.unlinkSync(`./semver.js`);
 
 let isUpdated = false;
 
