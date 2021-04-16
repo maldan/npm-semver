@@ -2,7 +2,7 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 let stdout = execSync(`git log -1 --pretty='%s'`).toString('utf-8');
 let commitName = stdout
-  .slice(1, -2)
+  .slice(0, -1)
   .split('--')
   .map((x) => x.trim());
 
