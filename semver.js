@@ -20,6 +20,7 @@ if (commitName[0] === 'Fix') {
 }
 
 if (!isUpdated) {
+  console.log('No changes!');
   process.exit(1);
 }
 
