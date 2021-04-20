@@ -13,10 +13,10 @@ let isUpdated = false;
 if (commitName[0] === 'Fix') {
   execSync(`npm version patch`).toString('utf-8');
   isUpdated = true;
-} else if (commitName[0] === 'Add' || commitName[0] === 'Update') {
+} else if (commitName[0] === 'Add' || commitName[0] === 'Added' || commitName[0] === 'Update') {
   execSync(`npm version minor`).toString('utf-8');
   isUpdated = true;
-} else if (commitName[0] === 'Change' || commitName[0] === 'Release') {
+} else if (commitName[0] === 'Change' || commitName[0] === 'Changed' || commitName[0] === 'Release') {
   execSync(`npm version major`).toString('utf-8');
   isUpdated = true;
 }
@@ -49,7 +49,7 @@ if (commitName.length > 1) {
     changeLog += `### Fixed\n`;
   }
 
-  if (commitName[0] === 'Add') {
+  if (commitName[0] === 'Add' || commitName[0] === 'Added') {
     changeLog += `### Added\n`;
   }
 
@@ -57,7 +57,7 @@ if (commitName.length > 1) {
     changeLog += `### Updated\n`;
   }
 
-  if (commitName[0] === 'Change') {
+  if (commitName[0] === 'Change' || commitName[0] === 'Changed') {
     changeLog += `### Changed\n`;
   }
 
